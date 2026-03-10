@@ -1,0 +1,35 @@
+		Homework 2
+​===================================================================
+The Capstone Challenge Part II: The "Industrial Pressure Monitor"
+===================================================================
+
+The Scenario: You are designing a safety monitoring system for a high-pressure steam valve.
+The potentiometer represents a pressure sensor. The LED is the warning beacon on the
+operator's dashboard, and the button is the "Acknowledge Alarm" switch.
+The Functional Requirements (The Rules):
+
+
+1.​ Zone 1: The Safe Zone (Analog reading 0 – 511)
+○​ The pressure is normal. The LED must be completely OFF.
+
+2.​ Zone 2: The Warning Zone (Analog reading 512 – 900)
+○​ The pressure is rising. The LED must turn ON, and its brightness must scale with
+the dial.
+○​ The Catch: At an analog reading of 512, the LED should be barely on (PWM ~1).
+At a reading of 900, it should be at maximum brightness (PWM 255).
+
+3.​ Zone 3: The Critical Zone (Analog reading 901 – 1023)
+○​ The pressure is dangerously high. The LED must detach from the PWM
+brightness control and instead blink continuously.
+
+4.​ The "Acknowledge" Override
+○​ If the system is in the Critical Zone (blinking), the operator can press the push
+button to acknowledge the danger.
+○​ Once pressed, the LED stops blinking and stays solid ON at maximum
+brightness.
+○​ If the dial is turned back down below 901, the system resets to normal behavior,
+and the override is forgotten.
+
+5.​ Serial Monitor Output
+○​ Continuously print the system status using a clear format. Example: Status:
+WARNING | Sensor: 750 | PWM: 154

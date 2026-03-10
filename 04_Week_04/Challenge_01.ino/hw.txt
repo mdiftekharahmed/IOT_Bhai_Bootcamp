@@ -1,0 +1,35 @@
+		Homework 1​
+​===============================================
+The Capstone Challenge: The "Smart Studio Lamp"
+===============================================
+
+The Scenario: You have been hired to prototype a control panel for a photographer's studio
+light. The photographer needs to turn the light on and off with a single button press. When the
+light is on, they need a dial to precisely adjust the brightness. They also want a digital readout of
+the light's current power level on their computer.
+
+Hardware Required:
+	1x Push Button (with 10kΩ pull-down resistor)
+	1x Potentiometer
+	1x LED (with appropriate current-limiting resistor)
+	Jumper wires and Breadboard
+	
+The Functional Requirements (The Rules):
+
+1.​ The Master Toggle: The push button must act as a master ON/OFF switch. Pressing it
+once turns the system ON. Pressing it again turns the system OFF. (Requires state
+change logic and debouncing from Week 2).
+
+2.​ Adjustable Brightness: When the system is ON, the LED's brightness must be
+controlled in real-time by turning the potentiometer. (Requires Analog Reading and PWM
+from Week 3).
+
+3.​ True Zero: When the system is OFF, the LED must be completely dark, regardless of
+where the potentiometer dial is currently turned.
+
+4.​ Smart Serial Telemetry: The Serial Monitor must display the status of the lamp.
+○​ If the lamp is OFF, it should print: System OFF.
+○​ If the lamp is ON, it should print the brightness level.
+○​ The Catch: Do not spam the Serial Monitor! The Arduino should only print a new
+line when the button state changes OR when the potentiometer dial is actually
+moved.
