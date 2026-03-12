@@ -1,0 +1,36 @@
+The Final Boss: The "Engine Control Unit (ECU) Simulator"
+-----------------------------------------------------=----
+
+The Scenario: You are programming the logic for a simplified electronic vehicle transmission.
+The potentiometer acts as the gas pedal (throttle). The push button acts as the gear shifter. The
+LED represents the engine RPM/stress.
+The Functional Requirements (The Rules):
+You must create a program with four distinct states. The system starts in State 0.
+
+●​ State 0: Engine OFF
+○​ The LED is completely OFF.
+○​ The potentiometer does absolutely nothing.
+○​ Action: Pressing the button shifts the system to State 1.
+
+●​ State 1: Engine IDLE (Neutral Gear)
+○​ The engine is running, but you aren't in gear.
+○​ The LED must continuously and smoothly pulse up and down (like the "Sunrise
+Simulator" from your Week 3 homework, fading from 0 to 255 and back down).
+○​ The potentiometer still does nothing.
+○​ Action: Pressing the button shifts the system to State 2.
+
+●​ State 2: First Gear (Standard Drive)
+○​ The pulsing stops immediately.
+○​ Now, the LED brightness is directly controlled by the potentiometer (Throttle). 0
+on the dial = 0 brightness. 1023 on the dial = 255 brightness.
+○​ The Catch: You are locked in First Gear. Pressing the button will do nothing
+unless the throttle is maxed out.
+○​ Action: If the potentiometer is reading greater than 1000 AND you press the
+button, you shift to State 3.
+
+●​ State 3: Reverse Gear (Inverted Drive)
+○​ The system is in reverse. The logic is now flipped.
+○​ If the potentiometer is at 0, the LED is at MAXIMUM brightness. As you turn the
+dial up to 1023, the LED dims down to completely OFF.
+○​ Action: Pressing the button at any time in this state turns the engine OFF
+(Returns to State 0).
