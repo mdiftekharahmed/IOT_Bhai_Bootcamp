@@ -1,4 +1,4 @@
-````md
+```md
 # Adafruit Fingerprint Sensor Library (Arduino)
 
 A practical guide to using the Adafruit Fingerprint Sensor Library with Arduino (R305 / AS608 / GT-521F modules).
@@ -32,7 +32,7 @@ Arduino only sends commands.
 ```cpp
 #include <Adafruit_Fingerprint.h>
 #include <SoftwareSerial.h>
-````
+```
 
 ## Initialize sensor
 
